@@ -4,11 +4,11 @@ FROM websphere-liberty:webProfile6
 #RUN wget --directory-prefix=/opt/ibm/wlp/usr/servers/defaultServer/dropins/ $BINARY_DEPLOYMENT_ARTIFACT_URL
 COPY app/* /opt/ibm/wlp/usr/servers/defaultServer/dropins/
 
-RUN chmod a+rwx /opt/ibm/wlp/output/defaultServer
+RUN chmod -R a+rwx /opt/ibm/wlp/output/defaultServer
 
-RUN chmod a+rwx /opt/ibm/wlp/output/defaultServer/workarea
+#RUN chmod -R a+rwx /opt/ibm/wlp/output/defaultServer/workarea
 
-RUN chmod a+rwx /opt/ibm/wlp/output/defaultServer/workarea/.sLock
+#RUN chmod a+rwx /opt/ibm/wlp/output/defaultServer/workarea/.sLock
 
 # IBM WebSphere Liberty license must be accepted
 ENV LICENSE $LICENSE
